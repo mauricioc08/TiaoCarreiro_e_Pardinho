@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./albunList.css";
+import Modal from "../Modal";
+import TracksCreate from "../TracksCreate";
 
 const AlbunsList = (props) => {
-  const { albuns } = props;
+  const { albuns, isAdmin, deleteAlbum, deleteTrack } = props;
+  const [showModal, setShowModal] = useState(false);
+  const [selectAlbum, setSelectAlbum] = useState({});
   const formatDuration = (duration) => {
     if (!duration) return "--:--";
 
@@ -14,6 +18,15 @@ const AlbunsList = (props) => {
     return `${minuts}:${seconds}`;
   };
 
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
+  const handleAddTrack = (item) => {
+    setSelectAlbum(item);
+    toggleModal();
+  };
+
   return (
     <>
       <div>
@@ -23,6 +36,16 @@ const AlbunsList = (props) => {
               <div key={item?.id}>
                 <h3>
                   Album: {item?.name}, {item?.year}
+                  {isAdmin && (
+                    <>
+                      <button onClick={() => deleteAlbum(item.id)}>
+                        Remover Album
+                      </button>
+                      <button onClick={() => handleAddTrack(item)}>
+                        Adicionar Faixa
+                      </button>
+                    </>
+                  )}
                 </h3>
                 <table>
                   <thead>
@@ -30,6 +53,7 @@ const AlbunsList = (props) => {
                       <th>Nº</th>
                       <th>Faixa</th>
                       <th>Duração</th>
+                      {isAdmin && <th>test</th>}
                     </tr>
                   </thead>
                   <tbody>
@@ -40,6 +64,13 @@ const AlbunsList = (props) => {
                             <td>{track?.number}</td>
                             <td>{track?.title}</td>
                             <td>{formatDuration(track?.duration)}</td>
+                            {isAdmin && (
+                              <td>
+                                <button onClick={() => deleteTrack(track.id)}>
+                                  X
+                                </button>
+                              </td>
+                            )}
                           </tr>
                         );
                       })
@@ -47,9 +78,7 @@ const AlbunsList = (props) => {
                       <tr>
                         <td>#</td>
                         <td>Este album não tem faixa</td>
-                        <td>
-                          <a href="#">Add Faixa</a>
-                        </td>
+                        <td>#</td>
                       </tr>
                     )}
                   </tbody>
@@ -59,6 +88,12 @@ const AlbunsList = (props) => {
             );
           })}
       </div>
+      {showModal && (
+        <Modal close={() => setShowModal(!showModal)}>
+          <h1>Mauricio</h1>
+          <TracksCreate album={selectAlbum} />
+        </Modal>
+      )}
     </>
   );
 };
