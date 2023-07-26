@@ -1,4 +1,5 @@
 import React from "react";
+import "./albunList.css";
 
 const AlbunsList = (props) => {
   const { albuns } = props;
@@ -53,7 +54,6 @@ const AlbunsList = (props) => {
                     )}
                   </tbody>
                 </table>
-                <br />
                 <br />
               </div>
             );

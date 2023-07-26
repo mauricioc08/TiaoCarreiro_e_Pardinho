@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import fetchApi from "./Services/fetchApi";
 import AlbunsList from "./Components/AlbunsList";
+import Header from "./Components/Header";
+import Search from "./Components/Search";
 
 function App() {
   const [albuns, setAlbuns] = useState([]);
@@ -21,10 +23,20 @@ function App() {
     searchAlbum();
   }, []);
 
+  const handleSubmit = (searchText) => {
+    searchAlbum(searchText);
+
+    console.log(searchText);
+  };
+
   return (
     <>
       <div className="container">
-        <AlbunsList albuns={albuns} />
+        <Header />
+        <div className="content">
+          <Search onSubmit={handleSubmit} />
+          <AlbunsList albuns={albuns} />
+        </div>
       </div>
     </>
   );
