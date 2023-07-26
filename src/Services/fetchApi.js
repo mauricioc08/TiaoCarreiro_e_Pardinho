@@ -2,7 +2,6 @@ const fetchApi = async (pathUrl, method, body = "") => {
   let myHeaders = new Headers();
   myHeaders.append("Content-type", "application/json");
   myHeaders.append("Authorization", "mauricio-cassiano@hotmail.com");
-  let data = null;
 
   let requestOptions = {
     method,
@@ -17,14 +16,13 @@ const fetchApi = async (pathUrl, method, body = "") => {
     `https://tiao.supliu.com.br/${pathUrl}`,
     requestOptions
   );
-  if (response.ok) {
-    data = await response.json();
-  }
+
+  const data = await response.json();
 
   return {
     data,
     status: response.ok,
-    message: response.statusText,
+    message: data.error,
   };
 };
 
