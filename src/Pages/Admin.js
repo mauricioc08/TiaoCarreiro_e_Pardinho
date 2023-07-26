@@ -1,0 +1,102 @@
+import { useEffect, useState } from "react";
+import fetchApi from "../Services/fetchApi";
+import AlbunsList from "../Components/AlbunsList";
+import AlbunsCreate from "../Components/AlbunsCreate";
+import Search from "../Components/Search";
+import "./admin.css";
+import Modal from "../Components/Modal";
+
+function Admin() {
+  const [albuns, setAlbuns] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const searchAlbum = (params = "") => {
+    let pathUrl = "api/album?limit=10&page=1";
+    const method = "GET";
+    if (params) {
+      pathUrl += `&keyword=${params}`;
+    }
+
+    fetchApi(pathUrl, method).then((res) => {
+      if (res.status) {
+        setAlbuns(res.data?.data);
+      }
+    });
+  };
+
+  const DeleteAlbum = (albumId) => {
+    let pathUrl = `api/album/${albumId}`;
+    const method = "DELETE";
+
+    fetchApi(pathUrl, method).then((res) => {
+      if (res.status) {
+        alert("Album deletado com sucesso");
+        searchAlbum();
+      }
+    });
+  };
+
+  const DeleteTrack = (trackId) => {
+    let pathUrl = `api/track/${trackId}`;
+    const method = "DELETE";
+
+    fetchApi(pathUrl, method).then((res) => {
+      if (res.status) {
+        alert("Faixa deletada com sucesso");
+        searchAlbum();
+      }
+    });
+  };
+
+  useEffect(() => {
+    searchAlbum();
+  }, []);
+
+  const handleSubmit = (searchText) => {
+    searchAlbum(searchText);
+  };
+
+  const handleDeleteAlbum = (albumId) => {
+    if (window.confirm("Você tem certeza que deseja deletar esse album")) {
+      DeleteAlbum(albumId);
+    }
+  };
+
+  const handleDeleteTrack = (trackId) => {
+    if (window.confirm("Você tem certeza que deseja deletar essa faixa")) {
+      DeleteTrack(trackId);
+    }
+  };
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
+  return (
+    <>
+      <div className="newSearch">
+        <div>
+          <Search onSubmit={handleSubmit} />
+        </div>
+        <div>
+          <button onClick={toggleModal}>Adicionar Album</button>
+        </div>
+      </div>
+      <div className="contentSearch">
+        <AlbunsList
+          albuns={albuns}
+          isAdmin={true}
+          deleteTrack={handleDeleteTrack}
+          deleteAlbum={handleDeleteAlbum}
+        />
+      </div>
+      {showModal && (
+        <Modal close={() => setShowModal(!showModal)}>
+          <h1>Mauricio</h1>
+          <AlbunsCreate />
+        </Modal>
+      )}
+    </>
+  );
+}
+
+export default Admin;

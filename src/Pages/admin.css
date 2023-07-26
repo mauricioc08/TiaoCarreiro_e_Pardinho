@@ -1,0 +1,7 @@
+.newSearch{
+    display: flex;
+}
+
+.newSearch input{
+    width: 50%;
+}
