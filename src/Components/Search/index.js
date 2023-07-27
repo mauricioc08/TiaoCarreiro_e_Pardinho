@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./search.css";
-
+import { toast } from "react-toastify";
 function Index(props) {
   const { onSubmit } = props;
   const [search, setSearch] = useState("");
@@ -8,7 +8,7 @@ function Index(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (search === "") {
-      alert("Digite algo");
+      toast.warning("Digite uma palavra chave");
       return;
     }
     onSubmit(search);
@@ -28,7 +28,7 @@ function Index(props) {
     <form onSubmit={handleSubmit}>
       <label>
         Digite uma palavra chave <br />{" "}
-        <input type="text" value={search} onChange={handleChange} />
+        <input type="text" value={search} onChange={handleChange} required />
       </label>
 
       <button>Procurar</button>

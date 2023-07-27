@@ -1,7 +1,45 @@
 .newSearch{
     display: flex;
+    align-items: center;
+    justify-content:start;
+    width: 100%;
 }
 
 .newSearch input{
-    width: 50%;
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.445);
 }
+
+.newSearch button{
+    border: 0;
+    padding: 15px 50px;
+    background: #0860d3c5;
+    border-radius: 5px;
+    color: #ffffffc9;
+    font-size: .95em;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.newSearch button:hover {
+background: #0860d3;
+}
+
+.newSearch button:active {
+    transform: translateY(3px);
+}
+
+@media (max-width: 865px) {
+    .newSearch input{
+      width: 200px;
+    } 
+    .newSearch button{
+      padding: 15px 15px;
+    }
+
+  
+  }
+
+ 
+

@@ -6,7 +6,9 @@ import Search from "../Components/Search";
 import "./admin.css";
 import Modal from "../Components/Modal";
 
-function Admin() {
+function Admin(props) {
+  const { setTitle } = props;
+
   const [albuns, setAlbuns] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const searchAlbum = (params = "") => {
@@ -48,6 +50,7 @@ function Admin() {
   };
 
   useEffect(() => {
+    setTitle("Administração");
     searchAlbum();
   }, []);
 
@@ -69,6 +72,9 @@ function Admin() {
 
   const toggleModal = () => {
     setShowModal(!showModal);
+    if (showModal) {
+      searchAlbum();
+    }
   };
 
   return (
@@ -90,9 +96,8 @@ function Admin() {
         />
       </div>
       {showModal && (
-        <Modal close={() => setShowModal(!showModal)}>
-          <h1>Mauricio</h1>
-          <AlbunsCreate />
+        <Modal close={toggleModal}>
+          <AlbunsCreate albuns={albuns} close={toggleModal} />
         </Modal>
       )}
     </>

@@ -1,10 +1,10 @@
 import React from "react";
 import fetchApi from "../../Services/fetchApi";
+import "../AlbunsCreate/albunsCreate.css";
+import { toast } from "react-toastify";
 
 function Index(props) {
   const { name, id, year, tracks } = props.album;
-
-  console.log("tracks", props);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +24,6 @@ function Index(props) {
   };
 
   const validateForm = (newTrack) => {
-    console.log(newTrack, tracks);
     let menssage = "";
     tracks.map((item) => {
       if (newTrack.number == item.number) {
@@ -35,7 +34,7 @@ function Index(props) {
       }
     });
     if (menssage) {
-      alert(menssage);
+      toast.warning(menssage);
       return false;
     }
     return true;
@@ -47,15 +46,17 @@ function Index(props) {
 
     fetchApi(pathUrl, method, body).then((res) => {
       if (res.status) {
-        alert("Faixa cadastrada com sucesso");
+        toast.success("Faixa cadastrada com sucesso");
       }
     });
   };
 
   return (
     <>
-      {name}, {year}
-      <form onSubmit={handleSubmit}>
+      <strong>
+        Faixa: {name}, {year}
+      </strong>
+      <form onSubmit={handleSubmit} className="formAddAlbum">
         <input type="hidden" value={id} name="album_id" />
         <label>Numero da faixa</label>
         <input type="number" name="number" required />

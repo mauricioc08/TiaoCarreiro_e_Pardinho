@@ -47,3 +47,32 @@ tbody tr td:last-child {
 tbody tr td{
 padding: 8px 10px;
 }
+
+.btnList button:first-child{
+    margin-top: 20px;
+    margin-right: 8px;
+    border: 0;
+    padding: 6px;
+    background: rgba(194, 18, 18, 0.822);
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btnList button:first-child:hover{
+    background: rgb(194, 18, 18);
+}
+
+.btnList button:nth-child(2){
+    margin-top: 20px;
+    border: 0;
+    padding: 6px;
+    background: #0860d3c5;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btnList button:nth-child(2):hover{ 
+    background: #0860d3;
+}

@@ -3,8 +3,9 @@ import fetchApi from "../Services/fetchApi";
 import AlbunsList from "../Components/AlbunsList";
 import Search from "../Components/Search";
 
-function Home() {
+function Home(props) {
   const [albuns, setAlbuns] = useState([]);
+  const { setTitle } = props;
 
   const searchAlbum = (params = "") => {
     let pathUrl = "api/album?limit=10&page=1";
@@ -21,13 +22,12 @@ function Home() {
   };
 
   useEffect(() => {
+    setTitle("Discografia");
     searchAlbum();
   }, []);
 
   const handleSubmit = (searchText) => {
     searchAlbum(searchText);
-
-    console.log(searchText);
   };
 
   return (

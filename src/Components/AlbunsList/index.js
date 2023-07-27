@@ -37,14 +37,14 @@ const AlbunsList = (props) => {
                 <h3>
                   Album: {item?.name}, {item?.year}
                   {isAdmin && (
-                    <>
+                    <div className="btnList">
                       <button onClick={() => deleteAlbum(item.id)}>
                         Remover Album
                       </button>
                       <button onClick={() => handleAddTrack(item)}>
                         Adicionar Faixa
                       </button>
-                    </>
+                    </div>
                   )}
                 </h3>
                 <table>
@@ -53,7 +53,6 @@ const AlbunsList = (props) => {
                       <th>Nº</th>
                       <th>Faixa</th>
                       <th>Duração</th>
-                      {isAdmin && <th>test</th>}
                     </tr>
                   </thead>
                   <tbody>
@@ -65,9 +64,9 @@ const AlbunsList = (props) => {
                             <td>{track?.title}</td>
                             <td>{formatDuration(track?.duration)}</td>
                             {isAdmin && (
-                              <td>
+                              <td className="btnList">
                                 <button onClick={() => deleteTrack(track.id)}>
-                                  X
+                                  Excluir Faixa
                                 </button>
                               </td>
                             )}
@@ -90,7 +89,6 @@ const AlbunsList = (props) => {
       </div>
       {showModal && (
         <Modal close={() => setShowModal(!showModal)}>
-          <h1>Mauricio</h1>
           <TracksCreate album={selectAlbum} />
         </Modal>
       )}
