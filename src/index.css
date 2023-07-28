@@ -15,10 +15,13 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
+  padding-top: 20px;
 }
+
 
 .container{
   width: 100%;
+  height: 600px;
   max-width: 960px;
   background: #ffffffb6;
 }
@@ -32,10 +35,11 @@ body {
 
 .content{
   padding: 30px;
+  height: 400px;
 }
 
 .contentSearch{
-  height: 400px;
+  height: 100%;
   overflow-y: auto;
 
 }

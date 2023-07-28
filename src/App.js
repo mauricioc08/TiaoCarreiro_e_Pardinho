@@ -5,6 +5,7 @@ import Admin from "./Pages/Admin";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
+import PageNotFound from "./Pages/PageNotFound";
 
 function App() {
   const [title, setTitle] = useState("");
@@ -19,9 +20,13 @@ function App() {
             <Routes>
               <Route path="/" element={<Home setTitle={setTitle} />} />
               <Route path="/admin" element={<Admin setTitle={setTitle} />} />
+              <Route path="*" element={<PageNotFound />} />
             </Routes>
           </div>
         </div>
+        <footer>
+          <br />
+        </footer>
       </BrowserRouter>
     </>
   );
