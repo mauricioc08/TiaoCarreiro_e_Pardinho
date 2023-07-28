@@ -5,6 +5,7 @@ import AlbunsCreate from "../Components/AlbunsCreate";
 import Search from "../Components/Search";
 import "./admin.css";
 import Modal from "../Components/Modal";
+import { toast } from "react-toastify";
 
 function Admin(props) {
   const { setTitle } = props;
@@ -31,7 +32,7 @@ function Admin(props) {
 
     fetchApi(pathUrl, method).then((res) => {
       if (res.status) {
-        alert("Album deletado com sucesso");
+        toast.success("Album deletado com sucesso!");
         searchAlbum();
       }
     });
@@ -43,14 +44,14 @@ function Admin(props) {
 
     fetchApi(pathUrl, method).then((res) => {
       if (res.status) {
-        alert("Faixa deletada com sucesso");
+        toast.success("Faixa deletada com sucesso!");
         searchAlbum();
       }
     });
   };
 
   useEffect(() => {
-    setTitle("Administração");
+    setTitle("Painel Admin");
     searchAlbum();
   }, []);
 
@@ -93,6 +94,7 @@ function Admin(props) {
           isAdmin={true}
           deleteTrack={handleDeleteTrack}
           deleteAlbum={handleDeleteAlbum}
+          searchAlbum={searchAlbum}
         />
       </div>
       {showModal && (

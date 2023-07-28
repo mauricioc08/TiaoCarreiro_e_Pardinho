@@ -4,9 +4,10 @@ import Modal from "../Modal";
 import TracksCreate from "../TracksCreate";
 
 const AlbunsList = (props) => {
-  const { albuns, isAdmin, deleteAlbum, deleteTrack } = props;
+  const { albuns, isAdmin, deleteAlbum, deleteTrack, searchAlbum } = props;
   const [showModal, setShowModal] = useState(false);
   const [selectAlbum, setSelectAlbum] = useState({});
+
   const formatDuration = (duration) => {
     if (!duration) return "--:--";
 
@@ -20,6 +21,9 @@ const AlbunsList = (props) => {
 
   const toggleModal = () => {
     setShowModal(!showModal);
+    if (showModal) {
+      searchAlbum();
+    }
   };
 
   const handleAddTrack = (item) => {
@@ -88,8 +92,8 @@ const AlbunsList = (props) => {
           })}
       </div>
       {showModal && (
-        <Modal close={() => setShowModal(!showModal)}>
-          <TracksCreate album={selectAlbum} />
+        <Modal close={toggleModal}>
+          <TracksCreate album={selectAlbum} close={toggleModal} />
         </Modal>
       )}
     </>
