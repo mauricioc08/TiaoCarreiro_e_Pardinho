@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Discografia Tião Carreiro e Pardinho
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um projeto feito em reactjs que faz requisição de api dos albuns e faixas de musicas do Tião Carreiro e Pardinho.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Pré-requisitos
 
-### `npm start`
+Antes de começar, certifique-se de cumprir os seguintes requisitos:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js e npm instalado
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalação
 
-### `npm test`
+Siga estas etapas para configurar e executar o projeto localmente:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone o repositório:
 
-### `npm run build`
+```bash
+git clone https://github.com/mauricioc08/TiaoCarreiro_e_Pardinho.git
+```
+Navegue para o diretório do projeto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+cd TiaoCarreiro_e_Pardinho
+```
+Instale as dependências do projeto:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Execute o projeto:
 
-### `npm run eject`
+```bash
+npm start
+```
+O aplicativo será executado em http://localhost:3000.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Uso
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Utilização do Site
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Na página inicial, você encontrará uma lista de albuns e faixas da discografia.
+- Clique na engrenagem do lado do texto "Discografia", para acessar o painel admin.
+- Faça o login (usuario e senha já cadastrado).
+- Agora na página portal admin você pode adicionar ou remover albuns e faixas. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Cadastro de Albuns
+- Clique no botão adicionar album.
+- No formulário coloque o nome e o ano do album.
+- Após preencher o formulário clique em criar album.
+## Cadastro de faixas
+- Clique no botão adicionar faixa a baixo do nome do album.
+- No formulário coloque o numero da faixa, nome da musica e duração da faxia (em segundos).
+- Após preencher o formulário clique em criar.
+## Excluir Faixa
+- Clique no botão excluir faixa ao lado da faixa.
+- Confirme a exclusão.
+## Excluir Album
+- Clique no botão excluir album a baixo do album.
+- Confirme a exclusão.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Link do Projeto: 
