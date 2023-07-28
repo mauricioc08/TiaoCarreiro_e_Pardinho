@@ -1,6 +1,6 @@
 # Discografia Tião Carreiro e Pardinho
 
-Um projeto feito em reactjs que faz requisição de api dos albuns e faixas de musicas do Tião Carreiro e Pardinho.
+Um projeto feito em reactjs que faz requisição de api dos álbuns e faixas de musicas do Tião Carreiro e Pardinho.
 
 
 ## Pré-requisitos
@@ -40,17 +40,17 @@ O aplicativo será executado em http://localhost:3000.
 
 ## Utilização do Site
 
-- Na página inicial, você encontrará uma lista de albuns e faixas da discografia.![print1](https://github.com/mauricioc08/TiaoCarreiro_e_Pardinho/assets/105306316/3a20f6a7-91e6-4aeb-84d2-748a619ed2de)
+- Na página inicial, você encontrará uma lista de álbuns e faixas da discografia.![print1](https://github.com/mauricioc08/TiaoCarreiro_e_Pardinho/assets/105306316/3a20f6a7-91e6-4aeb-84d2-748a619ed2de)
 
 - Clique na engrenagem do lado do texto "Discografia", para acessar o painel admin.![print9](https://github.com/mauricioc08/TiaoCarreiro_e_Pardinho/assets/105306316/3a6554c2-8b6e-4e97-ad41-4b94938604ee)
 
 
 - Faça o login (usuario e senha já cadastrado).![print3](https://github.com/mauricioc08/TiaoCarreiro_e_Pardinho/assets/105306316/7a38a957-78c6-47e2-850e-b488a70844df)
 
-- Agora na página portal admin você pode adicionar ou remover albuns e faixas. ![print4](https://github.com/mauricioc08/TiaoCarreiro_e_Pardinho/assets/105306316/d16ffc06-0f17-4556-b5dc-cc041f41470d)
+- Agora na página portal admin você pode adicionar ou remover álbuns e faixas. ![print4](https://github.com/mauricioc08/TiaoCarreiro_e_Pardinho/assets/105306316/d16ffc06-0f17-4556-b5dc-cc041f41470d)
 
 
-## Cadastro de Albuns
+## Cadastro de Álbuns
 
 - Clique no botão adicionar album.
 - No formulário coloque o nome e o ano do album.
