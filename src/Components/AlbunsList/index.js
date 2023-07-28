@@ -43,7 +43,7 @@ const AlbunsList = (props) => {
                   {isAdmin && (
                     <div className="btnList">
                       <button onClick={() => deleteAlbum(item.id)}>
-                        Remover Album
+                        Excluir Album
                       </button>
                       <button onClick={() => handleAddTrack(item)}>
                         Adicionar Faixa
