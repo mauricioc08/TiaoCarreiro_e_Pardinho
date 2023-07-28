@@ -39,7 +39,7 @@ const AlbunsList = (props) => {
             return (
               <div key={item?.id}>
                 <h3>
-                  Album: {item?.name}, {item?.year}
+                  Álbum: {item?.name}, {item?.year}
                   {isAdmin && (
                     <div className="btnList">
                       <button onClick={() => deleteAlbum(item.id)}>

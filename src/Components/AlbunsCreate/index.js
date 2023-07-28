@@ -48,10 +48,10 @@ function Index(props) {
 
   return (
     <form onSubmit={handleSubmit} className="formAddAlbum">
-      <label>Nome do Album</label>
+      <label>Nome do Álbum</label>
       <input type="text" name="name" required />
       <br />
-      <label>Ano do album</label>
+      <label>Ano do Álbum</label>
       <input
         type="number"
         name="year"
