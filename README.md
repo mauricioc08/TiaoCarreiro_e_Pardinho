@@ -74,9 +74,9 @@ O aplicativo será executado em http://localhost:3000.
 - Confirme a exclusão.![print8](https://github.com/mauricioc08/TiaoCarreiro_e_Pardinho/assets/105306316/241a2e8f-1816-482d-a34d-bc66ba3cbc56)
 
 
+Link do Projeto: https://tiao-carreiro-e-pardinho.vercel.app/ 
 
 
 
 
 
-Link do Projeto: 
