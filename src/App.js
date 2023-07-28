@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <ToastContainer autoClose={3000} />
+        <ToastContainer autoClose={2000} />
         <div className="container">
           <Header title={title} />
           <div className="content">
