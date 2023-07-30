@@ -40,6 +40,8 @@ O aplicativo será executado em http://localhost:3000.
 
 ## Utilização do Site
 
+Link do Site: https://tiao-carreiro-e-pardinho.vercel.app/ 
+
 - Na página inicial, você encontrará uma lista de álbuns e faixas da discografia.![print1](https://github.com/mauricioc08/TiaoCarreiro_e_Pardinho/assets/105306316/3a20f6a7-91e6-4aeb-84d2-748a619ed2de)
 
 - Clique na engrenagem do lado do texto "Discografia", para acessar o painel admin.![print9](https://github.com/mauricioc08/TiaoCarreiro_e_Pardinho/assets/105306316/3a6554c2-8b6e-4e97-ad41-4b94938604ee)
@@ -74,7 +76,7 @@ O aplicativo será executado em http://localhost:3000.
 - Confirme a exclusão.![print8](https://github.com/mauricioc08/TiaoCarreiro_e_Pardinho/assets/105306316/241a2e8f-1816-482d-a34d-bc66ba3cbc56)
 
 
-Link do Projeto: https://tiao-carreiro-e-pardinho.vercel.app/ 
+
 
 
 
